@@ -1,25 +1,22 @@
-import React from "react";
-import Button from '@mui/material/Button';
-import { Typography, styled } from "@mui/material";
+import React from 'react'
+import Box from '@mui/material/Box';
+import Navbar from "./Components/Navbar"
+import RightBar from "./Components/RightBar"
+import Feed from "./Components/Feed"
+import SideBar from "./Components/SideBar"
+import { Stack } from '@mui/material';
 
 const App = () => {
-  const BlueButton = styled(Button)({
-    backgroundColor : "blue",
-    color: "#fff",
-    "&:hover":{
-      backgroundColor : "gray",
-      color : "white"
-    }
-  })
   return (
-    <div>
-      <Button variant="contained" color="success"  size="small">Text</Button>
-      <Button variant="contained" color="secondary" size="median">Contained</Button>
-      <Button variant="outlined" size="large">Outlined</Button>
-      <Typography variant="h1"  component="h1">Sameer Sattar wdwdwdw</Typography>
-      <BlueButton>Sameeer Sattar</BlueButton>
-    </div>
-  );
-};
+    <Box>
+      <Navbar/>
+      <Stack justifyContent="space-evenly" direction="row" spacing={2} >
+        <SideBar/>
+        <Feed/>
+        <RightBar/>
+      </Stack>
+    </Box>
+  )
+}
 
-export default App;
+export default App
